@@ -1,0 +1,68 @@
+.timeline-scroll {
+	display: block;
+	overflow: visible;
+	width: 100%;
+}
+
+.timeline-scroll .timeline-card {
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+	margin-bottom: 1rem;
+}
+
+.timeline-scroll .timeline-card .card-img {
+	height: 240px;
+	object-fit: cover;
+}
+
+.timeline-scroll .timeline-card .card-hover-copy {
+	opacity: 0;
+	background-color: rgba(0, 32, 96, 0.88) !important;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.timeline-scroll .timeline-card:hover .card-hover-copy {
+	opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+	html,
+	body {
+		overflow-x: hidden;
+	}
+
+	.timeline-scroll {
+		overflow-x: hidden;
+	}
+}
+
+@media (min-width: 992px) {
+	.timeline-scroll {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: 1rem;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
+	.timeline-scroll .timeline-card {
+		flex: 0 0 calc((100% - 3rem) / 4);
+		max-width: calc((100% - 3rem) / 4);
+		margin-bottom: 0;
+	}
+}
+
+html[dir="rtl"] body {
+	text-align: right;
+}
+
+html[dir="rtl"] .timeline-scroll .timeline-card .card-hover-copy,
+html[dir="rtl"] .text-center {
+	text-align: center !important;
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea {
+	text-align: right;
+}
